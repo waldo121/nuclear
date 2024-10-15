@@ -257,15 +257,15 @@ export const useStreamLookup = () => {
     if (shouldSearchForStreams(queue)) {
       const currentSong: QueueItem = queue.queueItems[queue.currentSong];
 
-      if (currentSong && queueActions.trackHasNoFirstStream(currentSong)) {
+      if (currentSong && queueActions.trackHasNoFirstStream(currentSong) && !currentSong.error) {
         dispatch(queueActions.findStreamsForTrack(queue.currentSong));
         return;
       }
     
-      const nextTrackWithNoStream = (queue.queueItems as QueueItem[]).findIndex((item) => isEmpty(item.streams));
+      const nextTrackToSearch = (queue.queueItems as QueueItem[]).findIndex((item) => isEmpty(item.streams) && !item.error);
     
-      if (nextTrackWithNoStream !== -1) {
-        dispatch(queueActions.findStreamsForTrack(nextTrackWithNoStream));
+      if (nextTrackToSearch !== -1) {
+        dispatch(queueActions.findStreamsForTrack(nextTrackToSearch));
       }
     }
   }, [queue]);
