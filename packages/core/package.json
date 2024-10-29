@@ -30,7 +30,7 @@
     "cheerio": "^1.0.0-rc.5",
     "deezer-public-api": "^1.0.4",
     "electron-store": "^5.1.0",
-    "electron-timber": "^0.5.1",
+    "electron-timber": "^1.0.0",
     "fast-levenshtein": "^3.0.0",
     "get-lyrics-hd": "^0.0.1",
     "http-cookie-agent": "^6.0.5",

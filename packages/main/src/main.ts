@@ -19,8 +19,7 @@ import LocalLibraryDb from './services/local-library/db';
 import ListeningHistoryDb from './services/listening-history/db';
 
 app.commandLine.appendSwitch('autoplay-policy', 'no-user-gesture-required');
-app.commandLine.appendSwitch('no-sandbox');
-app.transformSource = transformSource;
+// app.transformSource = transformSource;
 
 let container: Container;
 

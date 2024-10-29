@@ -20,7 +20,7 @@ const transformGeneric = (transformer: Transformer) =>
             createConfigItem([
               presetEnv,
               {
-                targets: {electron: '12'}
+                targets: {electron: '33'}
               }
             ]),
             createConfigItem(presetReact)
